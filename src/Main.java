@@ -1,4 +1,6 @@
 import com.aluracursos.JavaPeliculas.calculos.CalculadoraDeTiempo;
+import com.aluracursos.JavaPeliculas.calculos.FiltroRecomendacion;
+import com.aluracursos.JavaPeliculas.modelos.Episodio;
 import com.aluracursos.JavaPeliculas.modelos.Pelicula;
 import com.aluracursos.JavaPeliculas.modelos.Series;
 
@@ -45,6 +47,15 @@ public class Main {
         calculadora.incluye(serie1);
         System.out.println(calculadora.getTiempoTotal());
 
+        FiltroRecomendacion filtroRecomendacion=new FiltroRecomendacion();
+        filtroRecomendacion.filtra(peli1);
 
+        Episodio episodio=new Episodio();
+        episodio.setNumero(1);
+        episodio.setNombre("Casa targuer");
+        episodio.setSerie("Casa del Dragon");
+        episodio.setTotalVizualizacion(10000);
+
+        filtroRecomendacion.filtra(episodio);
     }
 }
